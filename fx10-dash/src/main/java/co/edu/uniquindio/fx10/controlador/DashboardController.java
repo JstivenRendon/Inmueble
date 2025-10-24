@@ -1,45 +1,59 @@
 package co.edu.uniquindio.fx10.controlador;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-
-import java.io.IOException;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import co.edu.uniquindio.fx10.modelo.InmuebleFacade;
+import javafx.scene.control.Alert;
 
 public class DashboardController {
 
+    @FXML private ComboBox<String> cmbTipo;
+    @FXML private TextField txtCiudad;
+    @FXML private TextField txtHabitaciones;
+    @FXML private TextField txtPisos;
+    @FXML private TextField txtPrecio;
+
+    @FXML private TableView<?> tablaInmuebles;
+    @FXML private TableColumn<?, ?> colTipo;
+    @FXML private TableColumn<?, ?> colCiudad;
+    @FXML private TableColumn<?, ?> colHabitaciones;
+    @FXML private TableColumn<?, ?> colPisos;
+    @FXML private TableColumn<?, ?> colPrecio;
+
+    private final InmuebleFacade fachada = InmuebleFacade.getInstance();
+
     @FXML
-    private VBox contenedorPrincipal;
-
-    // Si otro controlador llama a getContenedorPrincipal(), esto evita el "cannot find symbol"
-    public VBox getContenedorPrincipal() {
-        return contenedorPrincipal;
-    }
-
-    @FXML
-    private void mostrarListado(ActionEvent event) {
-        cambiarEscena("/co/edu/uniquindio/fx10/vista/ListadoProducto.fxml", event);
-    }
-
-    @FXML
-    private void mostrarFormulario(ActionEvent event) {
-        cambiarEscena("/co/edu/uniquindio/fx10/vista/FormularioProducto.fxml", event);
-    }
-
-    // Método reutilizable para cambiar la escena actual (no abre ventanas nuevas)
-    private void cambiarEscena(String rutaFXML, ActionEvent event) {
+    private void agregarInmueble() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource(rutaFXML));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+            fachada.agregarInmueble(
+                    cmbTipo.getValue(),
+                    txtCiudad.getText(),
+                    Integer.parseInt(txtHabitaciones.getText()),
+                    Integer.parseInt(txtPisos.getText()),
+                    Double.parseDouble(txtPrecio.getText())
+            );
+
+            limpiarCampos();
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, "Datos inválidos").show();
         }
+    }
+
+    @FXML
+    private void eliminarInmueble() {
+        // Aquí puedes implementar la eliminación desde la tabla
+        new Alert(Alert.AlertType.INFORMATION, "Funcionalidad no implementada todavía").show();
+    }
+
+    private void limpiarCampos() {
+        cmbTipo.setValue(null);
+        txtCiudad.clear();
+        txtHabitaciones.clear();
+        txtPisos.clear();
+        txtPrecio.clear();
     }
 }

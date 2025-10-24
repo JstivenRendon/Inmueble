@@ -7,7 +7,7 @@
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="co.edu.uniquindio.fx10.controlador.FormularioProductoController"
+      fx:controller="co.edu.uniquindio.fx10.controlador.FormularioInmubleController"
       spacing="20" style="-fx-background-color: #f5f5f5;">
     
     <padding>

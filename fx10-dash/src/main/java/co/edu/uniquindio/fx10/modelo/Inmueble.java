@@ -1,75 +1,23 @@
 package co.edu.uniquindio.fx10.modelo;
 
-/**
- * Clase que representa un producto
- */
-public class Producto {
-    private String codigo;
-    private String nombre;
-    private String descripcion;
+public class Inmueble {
+    private String tipo;
+    private String ciudad;
+    private int habitaciones;
+    private int pisos;
     private double precio;
-    private int stock;
 
-    public Producto() {
-    }
-
-    public Producto(String codigo, String nombre, String descripcion, double precio, int stock) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.precio = precio;
-        this.stock = stock;
-    }
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
+    public Inmueble(String tipo, String ciudad, int habitaciones, int pisos, double precio) {
+        this.tipo = tipo;
+        this.ciudad = ciudad;
+        this.habitaciones = habitaciones;
+        this.pisos = pisos;
         this.precio = precio;
     }
 
-    public int getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
-
-    @Override
-    public String toString() {
-        return "Producto{" +
-                "codigo='" + codigo + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", precio=" + precio +
-                ", stock=" + stock +
-                '}';
-    }
+    public String getTipo() { return tipo; }
+    public String getCiudad() { return ciudad; }
+    public int getHabitaciones() { return habitaciones; }
+    public int getPisos() { return pisos; }
+    public double getPrecio() { return precio; }
 }
-
