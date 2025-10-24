@@ -15,7 +15,7 @@
             </padding>
 
             <Label text="Formulario de Inmueble" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
-            <ComboBox fx:id="cbTipo" promptText="Tipo (Casa, Apartamento, etc.)"/>
+            <ComboBox fx:id="cbTipo" promptText="Tipo (Casa, Apartamento,Finca.)"/>
             <TextField fx:id="txtCiudad" promptText="Ciudad"/>
             <TextField fx:id="txtHabitaciones" promptText="Número de habitaciones"/>
             <TextField fx:id="txtPisos" promptText="Número de pisos"/>

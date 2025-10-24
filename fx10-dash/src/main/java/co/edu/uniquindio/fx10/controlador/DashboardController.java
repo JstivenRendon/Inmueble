@@ -45,7 +45,7 @@ public class DashboardController {
 
     @FXML
     private void eliminarInmueble() {
-        // Aquí puedes implementar la eliminación desde la tabla
+
         new Alert(Alert.AlertType.INFORMATION, "Funcionalidad no implementada todavía").show();
     }
 
