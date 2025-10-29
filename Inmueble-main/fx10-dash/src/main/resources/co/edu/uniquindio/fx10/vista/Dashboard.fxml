@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.fx10.controlador.FormularioInmuebleController">
+
+    <!-- Panel izquierdo: formulario -->
+    <left>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+
+            <Label text="Formulario de Inmueble" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+            <ComboBox fx:id="cbTipo" promptText="Tipo (Casa, Apartamento,Finca.)"/>
+            <TextField fx:id="txtCiudad" promptText="Ciudad"/>
+            <TextField fx:id="txtHabitaciones" promptText="Número de habitaciones"/>
+            <TextField fx:id="txtPisos" promptText="Número de pisos"/>
+            <TextField fx:id="txtPrecio" promptText="Precio"/>
+
+            <Button text="Agregar Inmueble" onAction="#agregarInmueble"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        </VBox>
+    </left>
+
+    <!-- Panel central: tabla -->
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+
+            <Label text="Listado de Inmuebles" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+
+            <TableView fx:id="tablaInmuebles">
+                <columns>
+                    <TableColumn fx:id="colTipo" text="Tipo" prefWidth="120"/>
+                    <TableColumn fx:id="colCiudad" text="Ciudad" prefWidth="120"/>
+                    <TableColumn fx:id="colHabitaciones" text="Habitaciones" prefWidth="100"/>
+                    <TableColumn fx:id="colPisos" text="Pisos" prefWidth="80"/>
+                    <TableColumn fx:id="colPrecio" text="Precio" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <Button text="Eliminar Seleccionado" onAction="#eliminarInmueble"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+        </VBox>
+    </center>
+
+</BorderPane>

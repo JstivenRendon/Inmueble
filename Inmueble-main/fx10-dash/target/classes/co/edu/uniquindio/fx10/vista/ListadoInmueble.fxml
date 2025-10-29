@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.uniquindio.fx10.controlador.ListadoInmuebleController"
+      spacing="20" alignment="CENTER">
+
+    <Button fx:id="btnVolver" text="Volver" onAction="#volverDashboard"/>
+
+</VBox>
